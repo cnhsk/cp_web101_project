@@ -4,7 +4,7 @@
 
 A responsive marketing and registration site for **Build w/AI**, a two-day, in-person bootcamp that teaches non-programmers how to use AI tools to design, build, and ship a real software prototype. Built from scratch with vanilla HTML, CSS, and JavaScript as part of [CodePath's WEB101](https://www.codepath.org/) course.
 
-**[Live Demo →](#)** *(coming soon — deploying via GitHub Pages)*
+**[Live Demo →](https://cnhsk.github.io/cp_web101_project/)** *(goes live once this branch merges to `main`)*
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
