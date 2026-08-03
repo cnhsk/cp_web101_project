@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- head
+
+        Purpose:
+        - Title used here shows up in the browser tab
+        - Link to the favicon (small image that appears in the browser tab)
+        - Link to the CSS file (used to style the webpage)
+
+        When To Modify:
+        - [X] Project 2 (REQUIRED FEATURE) 
+        - [X] Project 2 (STRETCH FEATURE) (favicon)
+        - [ ] Any time after
+        -->
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="./img/buildwai_favicon.png">
+        <title>Build w/AI</title>
+    </head>
+    
+    <body>
+    
+<!-- navbar
+
+Purpose:
+- Navigation bar that allows users to jump to different sections of the webpage
+- Also holds buttons for user settings (dark mode, reduce motion)
+
+When To Modify:
+- [X] Project 4 (REQUIRED FEATURE)
+- [X] Project 5 (REQUIRED FEATURE) 
+- [ ] Project 8 (STRETCH FEATURE) 
+- [ ] Any time between / after
+-->
+<div class="navbar">
+    <ul>
+    <li><a href="https://forms.gle/Vxn6s1uKEEDE7BUQA">Let's Build</a></li>
+    <li><a href="#id-1">About</a></li>
+    <li><a href="#id-2">Schedule</a></li>
+    <li><a href="#id-3">Tools</a></li>
+    <li><a href="mailto:lets@buildwai.xyz">Email Us</a></li>
+    <li><button id="theme-button">Toggle Dark Mode</button></li>
+    </ul>
+</div>
+        <!-- headings
+
+        Purpose:
+        - Main header section of the webpage
+        - Contains the title, subtitle, image, and key buttons for the webpage
+
+        When To Modify:
+        - [X] Project 2 (REQUIRED FEATURE) 
+        - [X] Project 3 (REQUIRED FEATURE) 
+        - [X] Project 4 (REQUIRED FEATURE) 
+        - [ ] Any time after
+        -->
+        
+    <div class="header-container">
+    
+    <div class="header-item">
+        <img id="header-img" src="./img/buildwai_logo.png" alt="Logo for Build w/AI Vibe Coding Bootcamp"/>
+    </div>
+
+    <div class="header-item">
+        <h1>Build w/AI</h1>
+        <h3 id="main-subtitle">"Turn your ideas into working prototypes in just 48 hours."</h3>
+    </div>
+    </div>
+        
+        <div class="center-box">
+            <a href="https://forms.gle/Vxn6s1uKEEDE7BUQA" target="_blank">
+            <button type="button">Let's Build</button></a>
+            <a href="#id-4">
+            <button type="button">I'm Not Sure</button></a>
+        </div>
+        
+        <!-- about
+
+        Purpose:
+        - Section for general info about the event
+        - Contains a video, description, and key points about the event
+
+        When To Modify:
+        - [X] Project 2 (REQUIRED FEATURE) 
+        - [X] Project 2 (STRETCH FEATURE) 
+        - [X] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        <div id="id-1" class="center-box"><h2>About the Event</h2></div>
+<p>AI Builders Weekend is an intensive two-day experience designed specifically for domain experts who have big ideas but lack traditional coding skills.</p>
+<p>In this hands-on workshop, you’ll learn to leverage AI tools to build and ship a functional software prototype from scratch.</p>
+<p>We welcome builders from all backgrounds to join a supportive community, bridge the gap between concept and code, and turn your vision into reality.</p>
+<h3>What to Expect</h3>
+        <h4>Come with an Idea. Leave with an MVP</h4>
+        <ul>
+            <li> <b>Learn AI-Driven Development:</b> <i>You don’t need to be a programmer to build software. 
+            <p>We teach you how to leverage cutting-edge AI tools to transform your specific domain expertise into working code, guiding you step-by-step from initial concept to a functional prototype.</i></p>
+            <li> <b>Ship Your Project:</b> <i> Stop waiting for the right moment. 
+            <p>In this intensive, hands-on weekend, you will move beyond theory to build and deploy a real software solution to the internet, giving you a tangible product by the end of the second day.</i></p>
+            <li> <b>Join a Collaborative Community:</b> <i>You aren't building alone. 
+            <p>Connect with fellow domain experts, collaborate with teammates in small groups, and tap into ongoing support that continues well after the weekend concludes.</i></p>
+        </ul>
+        <div class="center-box">
+        <a href="https://forms.gle/Vxn6s1uKEEDE7BUQA" target="_blank">
+        <button type="button">Let's Build</button></a>
+         <a href="#id-4">
+            <button type="button">I'm Not Sure</button></a>        
+        </div>    
+
+        <!-- schedule
+
+        Purpose:
+        - Section for specific info about the event's schedule
+        - Contains images and descriptions of each activity
+
+        When To Modify:
+        - [X] Project 2 (REQUIRED FEATURE) 
+        - [X] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        
+        <div id="id-2" class="center-box"><h2>Event Schedule</h2></div>
+        
+        <div class="schedule-flex-container">
+        <div class="schedule-column">
+
+        <div class="center-box">
+        <img alt="Build w/AI Day 1 Schedule" class="oval-img2" src="./img/BuildwAI Day 1 Schedule.png"/>
+        </div>
+        
+        <h3>Day 1: AI Foundations, Ecosystem & Core Stack</h3>
+        <p>Goal: Understanding the landscape, mastering prompting, and establishing the dev environment.</p>
+        
+        <h4>Morning Session (10:00 – 12:00)</h4>
+        <ul><li>10:00 – 10:45 - Sprint 1: The State of AI & Systems. Overview of current AI models, LLM capabilities, and how "Vibe Coding" is reshaping the dev landscape.</li>
+        <li>10:45 – 11:00 - Break</li>
+        <li>11:00 – 12:00 - Sprint 2: Advanced Prompting Techniques. Deep dive into the prompting frameworks (Role, Task, Context, Style, Goals) and creating effective system prompts.</li>
+        </ul>
+
+        <h4>Lunch (12:00 – 14:00)</h4>
+
+        <h4>Afternoon Session (14:00 – 16:00)</h4>
+        <ul><li>14:00 – 14:45 - Sprint 3: Claude Code & IDE Setup. Configuring the local development environment, Claude Code Desktop app, and initial system checks.</li>
+        <li>14:45 – 15:00 - Break</li>
+        <li>15:00 – 15:45 - Sprint 4: Version Control Foundations. Integrating GitHub for version control and environment synchronization.</li>
+        <li>15:45 – 16:00 - Break</li></ul>
+
+        <h4>Evening Session (16:00 – 19:00)</h4>
+        <ul><li>16:00 – 16:45 - Sprint 5: Backend Architecture (Supabase). Setting up your database, authentication, and API layer.</li>
+        <li>16:45 – 17:00 - Break</li>
+        <li>17:00 – 17:45 - Sprint 6: Deployment Fundamentals (Vercel). Understanding the build/deploy cycle and setting up your Vercel pipeline.</li>
+        <li>17:45 – 18:00 - Break</li>
+        <li>18:00 – 18:45 - Sprint 7: Open Lab. Review of the day's setup, troubleshooting specific local issues, and roadmap planning for Day 2.</li>
+        <li>18:45 – 19:00 - Closing of Day 1 & Networking.</li></ul>
+        <br>
+        </div>
+        
+        <div class="schedule-column">
+
+        <div class="center-box">
+        <img alt="Build w/AI Day 2 Schedule" class="oval-img2" src="./img/BuildwAI Day 2 Schedule.png"/>
+        </div>
+
+        <h3>Day 2: Build, Integrate & Launch</h3>
+        <p>Goal: Building a functional MVP, polishing the product, and demoing to the community.</p>
+        
+        <h4>Morning Session (10:00 – 12:00)</h4>
+        <ul><li>10:00 – 10:45 - Sprint 1: Project Scoping & Planning. Defining the brief, 3-feature rule, and technical mapping.</li>
+        <li>10:45 – 11:00 - Break</li>
+        <li>11:00 – 12:00 - Sprint 2: Frontend Scaffold. Using Claude Code to generate the UI shell and navigation.</li></ul>
+
+        <h4>Lunch (12:00 – 14:00)</h4>
+
+        <h4>Afternoon Session (14:00 – 16:00)</h4>
+        <ul><li>14:00 – 14:45 - Sprint 3: Data & Auth Integration. Connecting the frontend to Supabase and enabling user sign-in.</li>
+        <li>14:45 – 15:00 - Break</li>
+        <li>15:00 – 15:45 - Sprint 4: AI Feature Integration. Adding LLM-powered features (e.g., auto-generation, search) to the product.</li>
+        <li>15:45 – 16:00 - Break</li></ul>
+
+        <h4>Evening Session (16:00 – 19:00)</h4>
+        <ul><li>16:00 – 16:45 - Sprint 5: Debugging & Quality Control. Automated testing, manual review, and fixing bugs with Claude Code.</li>
+        <li>16:45 – 17:00 - Break</li>
+        <li>17:00 – 17:45 - Sprint 6: Final Polish & Deploy. Launching to production on Vercel and finalizing the live URL.</li>
+        <li>17:45 – 18:00 - Break</li>
+        <li>18:00 – 18:45 - Sprint 7: Demo Day. Participant project showcases, peer feedback, and community reflection.</li>
+        <li>18:45 – 19:00 - Closing of Day 2 & Networking.</li></ul>
+        </div></div>
+
+        <div class="center-box">
+        <a href="https://forms.gle/Vxn6s1uKEEDE7BUQA" target="_blank">
+        <button type="button">Let's Build</button></a>
+         <a href="#id-4">
+            <button type="button">I'm Not Sure</button></a>        
+        </div>
+        
+        <!-- rsvp
+
+Purpose:
+- Section for users to sign up for the event
+- Contains a form for users to input their information, 
+and a list of other users who have signed up
+
+When To Modify:
+- [X] Project 6 (REQUIRED FEATURE) 
+- [X] Project 6 (STRETCH FEATURE) 
+- [ ] Any time after
+--> 
+<div id="rsvp">
+    
+    <div class="center-box">
+        <h2>RSVP Today!</h2>
+    </div>
+    
+    <div class="schedule-flex-container">
+        <div class="schedule-column rsvp-para">
+            <p>Ready to turn your domain expertise into a reality?</p>
+            <p>Our AI Builders Weekend bridges the gap between your vision and a working software prototype—no prior coding experience required.</p>
+            <p>Over two intensive days, you’ll master AI-driven development, collaborate with a community of fellow builders, and ship your own project to the internet.</p>
+            <p>Don’t wait for the 'right moment'—secure your spot today and start building.</p>
+        </div>
+        
+        <div class="schedule-column rsvp-participants">
+             <p><b>Who's Building with us this weekend?</b></p>
+            <p>👾Jason from Brooklyn will be building a budgeting app!</p>
+            <p>👾Amy from Manhattan will be building a live-online bookclub!</p>
+            <p>👾Teresa from Long Island will be building a chess game!</p>
+            <p id="rsvp-count">⭐ 3 people will be building with us this weekend!</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="rsvp-form" title="rsvp-form">
+            
+            <div class="form-inputs-row">
+                <input type="text" id="rsvp-name" placeholder="Name*" required>
+                <input type="text" id="rsvp-location" placeholder="Location*" required>
+                <input type="text" id="rsvp-idea" placeholder="Idea*" required>
+                <input type="email" id="rsvp-email" placeholder="Email*" required>
+                *Required Fields.
+            </div>
+            
+            <p><div class="form-button-row">
+                <button id="rsvp-button" type="submit">Submit RSVP</button>
+                <p>I agree to the processing of my information in accordance with the privacy policy and receiving relevant notifications from the organizers about the event.</p>
+            </div></p>
+            
+        </form>
+    </div>      
+</div>
+
+        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+
+        <!-- links
+
+        Purpose:
+        - Links to other resources related to the event
+
+        When To Modify:
+        - [X] Project 2 (STRETCH FEATURE) 
+        - [X] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+
+        <div class="center-box">
+        <img src="./img/BuildwAI Success.webp" class="oval-img" alt="Build This Weekend with a Community"/>
+        </div>
+        <div class="center-box">
+
+        <h2 id="id-4">Still Not Convinced?</h2>
+        </div>
+        <p>You have the domain expertise to solve real-world problems, but you've been held back by the barrier of traditional coding. That changes now. In this 2-day intensive workshop, <b>you don’t need to be a programmer to build software—you just need the vision.</b></p>
+        <p>We will show you how to harness AI tools to transform your ideas into a working prototype in just one weekend. <b>Join a community</b> of fellow builders, collaborate with your team, and ship your project to the internet.</p>
+        <p><b>Stop waiting for the right moment</b>; the tools to build your vision are here, and this is your chance to take the plunge!</p>
+        <p><b>If you're still not convinced or want to prepare in advance take a look at the video below as a sneek peek to what awaits you next weekend.</b></p>
+        
+        <div class="center-box">
+        <a href="https://forms.gle/Vxn6s1uKEEDE7BUQA" target="_blank">
+        <button type="button">Let's Build</button></a>        
+        </div>
+
+        <div class="center-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-QFHIoCo-Ko?si=kvjOHn1m0yQQCHp-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
+        <div id="id-3" class="center-box"><h2>Tools You Need</h2></div>
+        <p>These are the tools we will use over the weekend. There are many alternatives both free and paid but for the weekend we will stick to these so that we focus on development not the tools.</p>
+        <p>All the tools have generous free plans which will be enough for us. The only paid option might be the Claude Platform depending of your project.</p>
+        <p>Please get familiar and setup accounts. Stertch goal could be to connect your accounts with each other so you are ready to go.</p>
+        <a class="block" href="https://claude.ai/login">
+            <article>
+                <h3>-Claude & Claude Code & Claude Platform</h3>
+            </article>
+        </a>
+        <a class="block" href="https://github.com/">
+            <article>
+                <h3>-GitHub</h3>
+            </article>
+        </a>
+        <a class="block" href="https://supabase.com/dashboard">
+            <article>
+                <h3>-Supabase</h3>
+            </article>
+        </a>
+        <a class="block" href="https://vercel.com">
+            <article>
+                <h3>-Vercel</h3>
+            </article>
+        </a>
+        <a class="block" href="https://www.google.com/intl/en_sv/chrome/">
+            <article>
+                <h3>-Google Chrome</h3>
+            </article>
+        </a>
+        <h3>-Modern Laptop with Charger</h3>
+
+        <div class="center-box">
+        <h2>Useful Links</h2>
+        </div>
+        <p>You can find below useful links related to our course.</p>
+
+        <a class="block" href="https://anthropic.skilljar.com/ai-fluency-framework-foundations">
+            <article>
+                <h3>-AI Fluency Framework Foundations</h3>
+            </article>
+            <p>We can use this course from Anthropic to learn how to work effectively with various AI Systems. It includes prompting techniques.</p>
+        </a>
+
+        <a class="block" href="https://code.claude.com/docs/en/best-practices">
+            <article>
+                <h3>-Claude.MD</h3>
+            </article>
+            <p>We will create this file prior to coding so that the AI doesn't go of course.</p>
+        </a>
+
+        <a class="block" href="https://github.com/google-labs-code/design.md">
+            <article>
+                <h3>-Design.MD</h3>
+            </article>
+            <p>We will create this file prior to coding so that the AI doesn't go of course in relation to Design elements of our app.</p>
+        </a>
+        <a class="block" href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">
+            <article>
+                <h3>-Memory.MD</h3>
+            </article>
+            <p>We will create this file prior to coding so that the context window of our AI increases and we can keep track of the changes being made.</p>
+        </a>
+       
+        <footer class="footer">
+            <p>© 2026 Build w/AI. All rights reserved.</p>
+            <a href="https://forms.gle/Vxn6s1uKEEDE7BUQA" target="_blank">
+            <p>Let's Build</p></a>
+    
+        <a href="mailto:lets@buildwai.xyz">
+            <article>    
+                <p>Email Us</p>
+            </article>
+        </a>
+    
+    <p>Legal Disclaimers</p>
+</footer>
+
+        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
+    <script src="index.js"></script>
+    </body>
+</html>
