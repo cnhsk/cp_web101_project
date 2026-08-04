@@ -29,7 +29,7 @@ Purpose:
 When To Modify:
 - [X] Project 4 (REQUIRED FEATURE)
 - [X] Project 5 (REQUIRED FEATURE) 
-- [ ] Project 8 (STRETCH FEATURE) 
+- [X] Project 8 (STRETCH FEATURE) 
 - [ ] Any time between / after
 -->
 <div class="navbar">
@@ -40,6 +40,7 @@ When To Modify:
     <li><a href="#id-3">Tools</a></li>
     <li><a href="mailto:lets@buildwai.xyz">Email Us</a></li>
     <li><button id="theme-button">Toggle Dark Mode</button></li>
+    <li><button id="motion-button">Reduce Motion: OFF</button></li>
     </ul>
 </div>
         <!-- headings
@@ -122,7 +123,7 @@ When To Modify:
         <div id="id-2" class="center-box"><h2>Event Schedule</h2></div>
         
         <div class="schedule-flex-container">
-        <div class="schedule-column">
+        <div class="schedule-column revealable">
 
         <div class="center-box">
         <img alt="Build w/AI Day 1 Schedule" class="oval-img2" src="./img/BuildwAI Day 1 Schedule.png"/>
@@ -155,7 +156,7 @@ When To Modify:
         <br>
         </div>
         
-        <div class="schedule-column">
+        <div class="schedule-column revealable">
 
         <div class="center-box">
         <img alt="Build w/AI Day 2 Schedule" class="oval-img2" src="./img/BuildwAI Day 2 Schedule.png"/>
@@ -184,14 +185,20 @@ When To Modify:
         <li>17:45 – 18:00 - Break</li>
         <li>18:00 – 18:45 - Sprint 7: Demo Day. Participant project showcases, peer feedback, and community reflection.</li>
         <li>18:45 – 19:00 - Closing of Day 2 & Networking.</li></ul>
-        </div></div>
-
-        <div class="center-box">
-        <a href="https://forms.gle/Vxn6s1uKEEDE7BUQA" target="_blank">
-        <button type="button">Let's Build</button></a>
-         <a href="#id-4">
-            <button type="button">I'm Not Sure</button></a>        
         </div>
+
+        </div>
+
+      <br>
+
+      <div class="center-box revealable">
+    <a href="https://forms.gle/Vxn6s1uKEEDE7BUQA" target="_blank">
+    <button type="button">Let's Build</button>
+    </a>
+    <a href="#id-4">
+    <button type="button">I'm Not Sure</button>
+    </a>
+    </div>
         
         <!-- rsvp
 
@@ -205,7 +212,7 @@ When To Modify:
 - [X] Project 6 (STRETCH FEATURE) 
 - [ ] Any time after
 --> 
-<div id="rsvp">
+<div id="rsvp" class="revealable">
     
     <div class="center-box">
         <h2>RSVP Today!</h2>
@@ -248,7 +255,30 @@ When To Modify:
     </div>      
 </div>
 
-        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+<!-- success modal
+
+Purpose:
+- Modal that appears when a user successfully signs up for the event
+- Contains a personalized message and image
+
+When To Modify:
+- [X] Project 9 (REQUIRED FEATURE)
+- [X] Project 9 (STRETCH FEATURE) 
+- [ ] Any time after
+--> 
+
+<div id="success-modal" class="modal">
+    <div class="modal-container">
+    <button id="modal-close">X</button>
+        <div id="modal-text">
+            <p>You are now officially part of the Build w/AI community!</p>
+            <p>Are you ready to Build?</p>
+        </div>
+        <div id="modal-image">
+            <img src="./img/buy-and-build2.png" class="oval-img" alt="It's Time to Build!"/>
+        </div>
+    </div>
+</div>
 
         <!-- links
 

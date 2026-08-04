@@ -20,6 +20,37 @@ document.body.classList.toggle("dark-mode");
 //             and tell it to use toggleDarkMode as its callback function
 themeButton.addEventListener("click", toggleDarkMode);
 
+
+/*** Reduce Motion ***
+  
+  Purpose:
+  - Use this starter code to add a reduce motion feature to your website.
+
+  When To Modify:
+  - [X] Project 8 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+// Step 1: Select the reduce motion button
+let motionButton = document.getElementById("motion-button");
+
+// Step 2: Write the callback function
+const toggleMotionButton = () => {
+  // 1. Toggle the class on body
+  document.body.classList.toggle("reduce-motion");
+
+  // 2. Update the button text based on class presence
+  if (document.body.classList.contains("reduce-motion")) {
+    motionButton.textContent = "Reduce Motion: ON";
+  } else {
+    motionButton.textContent = "Reduce Motion: OFF";
+  }
+};
+
+// Step 3: Register a 'click' event listener for the theme button,
+// and tell it to use toggleMotionButton as its callback function
+motionButton.addEventListener("click", toggleMotionButton);  
+
 /*** Form Handling ***
   
   Purpose:
@@ -30,7 +61,7 @@ themeButton.addEventListener("click", toggleDarkMode);
   - [X] Project 6 (REQUIRED FEATURE)
   - [X] Project 6 (STRETCH FEATURE) 
   - [X] Project 7 (REQUIRED FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
+  - [X] Project 9 (REQUIRED FEATURE)
   - [ ] Any time between / after
 ***/
 
@@ -39,14 +70,10 @@ let rsvpButton = document.getElementById("rsvp-button");
 
 let count = 3;
 
-const addParticipant = (event) => {
-    event.preventDefault();
+const addParticipant = (person) => {
     // Step 2: Write your code to manipulate the DOM here
-    let nameValue = document.getElementById("rsvp-name").value;
-    let locationValue = document.getElementById("rsvp-location").value;
-    let ideaValue = document.getElementById("rsvp-idea").value;
     let newParagraph = document.createElement("p");
-    newParagraph.textContent = "👾 " + nameValue + " from " + locationValue + " will be building a " + ideaValue + "!";
+    newParagraph.textContent = "👾 " + person.name + " from " + person.location + " will be building a " + person.idea + "!";
     let participantsContainer = document.querySelector(".rsvp-participants");
     participantsContainer.appendChild(newParagraph);
     document.getElementById("rsvp-count").remove();
@@ -65,7 +92,7 @@ const addParticipant = (event) => {
   When To Modify:
   - [X] Project 7 (REQUIRED FEATURE)
   - [X] Project 7 (STRETCH FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
+  - [X] Project 9 (REQUIRED FEATURE)
   - [ ] Any time between / after
 ***/
 
@@ -77,7 +104,14 @@ const validateForm = (event) => {
   let containsErrors = false;
 
   var rsvpInputs = document.getElementById("rsvp-form").elements;
-  
+
+    let person = {
+name: rsvpInputs[0].value,
+location: rsvpInputs[1].value,
+idea: rsvpInputs[2].value,
+email: rsvpInputs[3].value, 
+}
+
   // 1. Wipe all UI error states FIRST at the beginning
   for (let i = 0; i < rsvpInputs.length; i++) {
     rsvpInputs[i].classList.remove("error");
@@ -100,7 +134,8 @@ const validateForm = (event) => {
 
   // 4. Success action
   if (!containsErrors) {
-    addParticipant(event);
+    addParticipant(person);
+    toggleModal(person);
     for (let i = 0; i < rsvpInputs.length; i++) {
       rsvpInputs[i].value = "";        
     }
@@ -116,12 +151,12 @@ rsvpButton.addEventListener("click", validateForm);
   - Use this starter code to add scroll animations to your website.
 
   When To Modify:
-  - [ ] Project 8 (REQUIRED FEATURE)
+  - [X] Project 8 (REQUIRED FEATURE)
   - [ ] Any time after
 ***/
 
 // Step 1: Select all elements with the class 'revealable'.
-let revealableContainers = TODO;
+let revealableContainers = document.querySelectorAll(".revealable");
 
 // Step 2: Write function to reveal elements when they are in view.
 const reveal = () => {
@@ -129,22 +164,77 @@ const reveal = () => {
         let current = revealableContainers[i];
 
         // Get current height of container and window
-        let windowHeight = TODO;
-        let topOfRevealableContainer = TODO;
+        let windowHeight = window.innerHeight;
+        let topOfRevealableContainer = revealableContainers[i].getBoundingClientRect().top;
         let revealDistance = parseInt(getComputedStyle(current).getPropertyValue('--reveal-distance'), 10);
 
         // If the container is within range, add the 'active' class to reveal
         if (topOfRevealableContainer < windowHeight - revealDistance) {
-            TODO;
+            current.classList.add("active");
         }
         // If the container is not within range, hide it by removing the 'active' class
         else { 
-            TODO;
+            current.classList.remove("active");
         }
     }
 }
 
 // Step 3: Whenever the user scrolls, check if any containers should be revealed
-window.addEventListener(TODO, TODO);
+window.addEventListener('scroll', reveal);
 
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/*** Modal ***
+  
+  Purpose:
+  - Use this starter code to add a pop-up modal to your website.
+
+  When To Modify:
+  - [X] Project 9 (REQUIRED FEATURE)
+  - [X] Project 9 (STRETCH FEATURE)
+  - [ ] Any time after
+***/
+
+// 1. Declare global variables for the modal animation
+let modalImage = document.getElementById("modal-image");
+let modalClose = document.getElementById("modal-close");
+let intervalId;
+let rotateFactor = 0;
+
+// 2. Open the modal and start the wave animation
+const toggleModal = (person) => {
+    let modal = document.getElementById("success-modal");
+    modal.style.display = "flex";
+
+    let modalText = document.getElementById("modal-text");
+    modalText.textContent = "Thanks for RSVPing, " + person.name + "! We can't wait to see you next weekend!";
+
+    // Only start the interval if reduced motion is NOT active
+    if (!document.body.classList.contains("reduce-motion")) {
+        intervalId = setInterval(animateImage, 500);
+    }
+
+    // Auto-close after 5 seconds
+    setTimeout(() => {
+        modal.style.display = 'none';
+        clearInterval(intervalId);
+    }, 5000);
+};
+
+// 3. Animate the image angle
+const animateImage = () => {
+    if (rotateFactor === 0) {
+        rotateFactor = -10;
+    } else {
+        rotateFactor = 0;
+    }
+    modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+};
+
+// 4. Function to close the modal manually
+const closeModal = () => {
+    let modal = document.getElementById("success-modal");
+    modal.style.display = "none";
+    clearInterval(intervalId);
+};
+
+// 5. Attach event listener for the close button
+modalClose.addEventListener("click", closeModal);
