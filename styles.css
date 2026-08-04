@@ -228,14 +228,36 @@ button:hover {
     transform: translateY(-1px);
 }
 
+/* Default look for the Motion Toggle button */
+#motion-button {
+    background-image: linear-gradient(135deg, var(--accent-color-medium), var(--accent-color-dark));
+    color: #FFFFFF;
+    border: 2px solid var(--accent-color-darkest);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-weight: bold;
+    
+    box-shadow: 0 4px 12px rgba(0, 105, 92, 0.3);
+    
+    letter-spacing: 0.5px;
+    
+    transition: all 0.2s ease;
+}
+
+#motion-button:hover {
+    background-image: linear-gradient(135deg, #009688, var(--accent-color-medium));
+    box-shadow: 0 6px 16px rgba(0, 105, 92, 0.45);
+    transform: translateY(-1px);
+}
+
 /*** About Section ***
   
   Purpose:
   - Add style rules for your website's About section
 
   When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
+  - [X] Project 3 (OPTIONAL)
+  - [X] Project 4 (STRETCH FEATURE) 
   - [ ] Any time after
 ***/
 
@@ -292,8 +314,8 @@ button:hover {
   - Add style rules for your website's Links section
 
   When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
+  - [X] Project 3 (OPTIONAL)
+  - [X] Project 4 (STRETCH FEATURE) 
   - [ ] Any time after
 ***/
 
@@ -305,7 +327,7 @@ button:hover {
 
   When To Modify:
   - [X] Project 6 (REQUIRED FEATURE)
-  - [ ] Project 7 (REQUIRED FEATURE)
+  - [X] Project 7 (REQUIRED FEATURE)
   - [ ] Any time after
 ***/
 
@@ -417,27 +439,89 @@ body.dark-mode .form-inputs-row input:focus {
   - Add style rules to enable scroll animations for your website
 
   When To Modify:
-  - [ ] Project 8 (REQUIRED FEATURE)
+  - [X] Project 8 (REQUIRED FEATURE)
   - [ ] Any time after
 ***/
 
 .revealable {
   --reveal-distance: 150px; /* CSS Variable */
 
-  scroll-margin-top: TODO;
-  opacity: TODO;
-  transition: TODO;
-  position: TODO;
-  transform: TODO;
+  scroll-margin-top: var(--reveal-distance);
+  opacity: 0;
+  transition: all 2s ease;
+  position: relative;
+  transform: translateY(var(--reveal-distance));
 }
 
 .active {
-  scroll-margin-top: TODO;
-  transform: translateY(TODO);
-  opacity: TODO;
+  scroll-margin-top: 0;
+  transform: translateY(0);
+  opacity: 1;
 }
 
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/* 1. Triggered by manual toggle class on body */
+.reduce-motion .revealable {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/*** Success Modal  ***
+  
+  Purpose:
+  - Add style rules to your website's pop-up modal, which appears
+    when a user successfully submits the RSVP form
+
+  When To Modify:
+  - [X] Project 9 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.modal {
+  display: none;   /* modal should be hidden by default*/
+  position: fixed; /* modal cannot move around the screen */
+  z-index: 2;      /* modal appears above other elements */ 
+  
+  /* TODO: Make the modal fill the entire screen */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Add a semi-transparent background to shadow non-modal elements*/
+  background-color: rgba(0,0,0,0.4); /* 40% opacity black */
+
+  /* Flexbox settings for modal */
+  /* These won't apply until we update "display:" from "hidden" to "flex" in our JS */
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+    /* Change modal size and spacing here */
+    padding: 50px;
+    width: 55%;
+    position: relative;
+
+    /* Customize modal style here */
+    background-color: lightsteelblue;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-family: monospace;
+
+    /* Optional: Use flexbox to customize .modal-item layout */
+    display: flex;
+}
+
+#modal-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+}
+
 
 /*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
 
