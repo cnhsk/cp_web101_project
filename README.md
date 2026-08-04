@@ -27,12 +27,15 @@ This site is the front door to that community: it explains the event, walks visi
 
 - **Responsive navigation bar** with anchor links to every section, plus a mailto contact link
 - **Dark mode toggle**, powered by a CSS custom-property theme system with dedicated palettes for light and dark mode
+- **Reduce Motion toggle** — an accessibility control that disables scroll animations for users who prefer (or need) less motion
+- **Scroll-triggered reveal animations** — schedule cards, CTAs, and the RSVP section fade/slide into view as they enter the viewport, and are skipped entirely when Reduce Motion is on
 - **Hero header** with logo, tagline, and calls to action
 - **About section** outlining the event's value proposition and what attendees walk away with
 - **Two-day, sprint-by-sprint schedule** rendered in a two-column responsive layout, with a scannable image + timeline for each day
 - **Live RSVP form** with:
   - Client-side validation (required fields, minimum length, email format) with visual error states
   - Dynamic DOM updates — new signups are appended to the "who's building with us" list and the live attendee counter increments in real time, with zero page reload
+  - A success modal on submit, personalized with the attendee's name, with a small animated graphic and auto-dismiss
 - **Resource library** linking out to every tool used during the bootcamp (Claude, GitHub, Supabase, Vercel) and supporting reading material
 - **Embedded video** and social-proof section for visitors who aren't convinced yet
 - **Sticky footer** with contact and legal links
@@ -43,7 +46,7 @@ This site is the front door to that community: it explains the event, walks visi
 |---|---|
 | Markup | Semantic HTML5 |
 | Styling | CSS3 — custom properties (design tokens), Flexbox layouts, `:hover`/`:focus` states, dark-mode theming via class toggling |
-| Behavior | Vanilla JavaScript (ES6) — DOM manipulation, event listeners, form validation, no frameworks or build step |
+| Behavior | Vanilla JavaScript (ES6) — DOM manipulation, event listeners, form validation, scroll-position-based reveal animations, modal control, no frameworks or build step |
 
 No dependencies, no bundler — open `index.html` in a browser and it runs.
 
@@ -67,7 +70,7 @@ cp_web101_project/
 └── README.md
 ```
 
-> **Note:** the `img/` assets (logo, favicon, and schedule graphics) referenced in `index.html` are being finalized and will be added to the repo shortly.
+> **Note:** the `img/` assets (logo, favicon, schedule graphics, modal graphic, and social-proof image) referenced in `index.html` are being finalized and will be added to the repo shortly.
 
 ## Design System
 
@@ -88,17 +91,13 @@ This was my first end-to-end web project, and the RSVP form was both the highlig
 
 ## Roadmap
 
-A few features are intentionally scaffolded but not yet complete, tracked directly in the code comments:
-
-- [ ] Scroll-triggered reveal animations as sections enter the viewport
-- [ ] Success modal on RSVP submission
 - [ ] Add remaining image assets (`img/`)
 
 **Longer-term vision:** open-source this project as a reusable template so any 2-person team, anywhere in the world, can clone the repo, localize the content, and run their own "Build w/AI" event in their own city — starting with mine.
 
 ## Course Context
 
-Built as coursework for **CodePath WEB101**, progressing feature-by-feature across the course's project milestones (layout & styling → responsive navigation → dark mode → interactive forms → validation). Thanks to the CodePath WEB101 team for the structure and support, and to the Code With AI community for the inspiration behind this project's premise.
+Built as coursework for **CodePath WEB101**, progressing feature-by-feature across the course's project milestones (layout & styling → responsive navigation → dark mode → interactive forms → validation → scroll animations & accessibility → success modal). Thanks to the CodePath WEB101 team for the structure and support, and to the Code With AI community for the inspiration behind this project's premise.
 
 ## License
 
